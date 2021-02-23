@@ -21,7 +21,7 @@ module.exports=async function main(user) {
   now.setHours(now.getHours()+1)
   let link;
   
-  link=`https://4d1ab72ccab9.ngrok.io/auth/recuperar${await cripton.crypt(user)}+${await cripton.crypt(now.toString())}`
+  link=`https://da-mais-proximo.herokuapp.com/auth/recuperar${await cripton.crypt(user)}+${await cripton.crypt(now.toString())}`
 
   let info = await transporter.sendMail({
     from: '"Edmilson Soares" <edmilsonsoares120@gmail.com>', // sender address

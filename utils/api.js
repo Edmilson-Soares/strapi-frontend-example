@@ -3,7 +3,7 @@
 const request = require('request')
 
 var apiRequest = request.defaults({
-  baseUrl: 'http://localhost:1337/',
+  baseUrl: 'https://da-mais-proximo.herokuapp.com/',
   json: true,
   headers: {'x-token': 'my-token'}
 })
