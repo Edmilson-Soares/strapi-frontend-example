@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
+    <title>Departamento E.M</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>D.E.M</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">1</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notificações</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a>
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="Edmilson" src="assets/img/user.jpg" class="img-fluid">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Edmilson</span> novas tarefas <span class="noti-title">Desenvolvimento</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a id="ver_ativ">Ver todas as Notificações</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+						<span>Administrador</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item">Meu Perfil</a>
+						<a class="dropdown-item">Editar Perfil</a>
+						<a class="dropdown-item" id="conf">Configurações</a>
+						<a class="dropdown-item" href="../login/login.html">Sair</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item">Meu Perfil</a>
+						<a class="dropdown-item" >Editar Perfil</a>
+						<a class="dropdown-item">Configurações</a>
+						<a class="dropdown-item" href="../login/login.html">Sair</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Menu</li>
+                        <li class="active i" id="inicio">
+                            <!--href="index-2.html" -->
+                            <a ><i class="fa fa-dashboard"></i> <span>Inicio</span></a>
+                        </li>
+						<li id="membr" class="m">
+                            <a ><i class="fa fa-cart-plus"></i> <span>Encomenda</span></a>
+                        </li>
+                        <li id="sect">
+                            <a ><i class="fa fa-cart-arrow-down"></i> <span>Compra</span></a>
+                        </li>
+                        <li id="covt" class="c">
+                            <a><i class="fa fa-bell-o"></i> <span>Notificações</span></a>
+                        </li>					
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-----  Inicio------->
+        <div id="home" class="page-wrapper" style="display: none;">
+             <div lass="content" >
+                <div class="row" style="margin-top: 50px; margin-left:20px;">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+							<span class="dash-widget-bg3"><i class="fa fa-handshake-o" aria-hidden="true"></i></span>
+							<div class="dash-widget-info text-right">
+								<h3>0</h3>
+								<span class="widget-title3">Solicitações<i class="fa fa-check" aria-hidden="true"></i></span>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg1"><i class="fa fa-cart-plus"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>0</h3>
+                                <span class="widget-title1">Pendentes<i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg2"><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>0</h3>
+                                <span class="widget-title2">Concluidas<i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-12 col-md-12 col-lg-12 col-xl-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="chart-title">
+									<h4>Compras e Entregas</h4>
+								</div>	
+								<canvas id="linegraph"></canvas>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+        </div>
+        </div>
+        <!-----   Membro------->
+        <div id="membro" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Encomendas</h4>
+                    </div>
+                    <div class="col-sm-4 col-3">
+                        <a id="memlistar"></a>
+                    </div>
+                    <div class="col-sm-4 col-3 text-right">
+                        <a id="addmem" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i>Solicitar Encomenda</a>
+                    </div>
+                </div>
+				<div id="dd222" class="row doctor-grid">
+
+                    
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="see-all">
+                            <a class="see-all-btn" href="javascript:void(0);">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+               <div id="delete_membro" class="modal fade delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <img src="assets/img/sent.png" alt="" width="50" height="46">
+                            <h3>Queres mesmo eliminar este membro?</h3>
+                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">sair</a>
+                                <button id="memdel" class="btn btn-danger" >excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-----  Sector------->
+        <div id="sector"class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Sectores</h4>
+                    </div>
+                    <div class="col-sm-6 col-6 text-right m-b-20">
+                        <a id="addsect" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Adicionar</a>
+                    </div>
+                </div>
+                <div class="row doctor-grid">
+                    <div class="col-md-4 col-sm-4  col-lg-3">
+                        <div class="profile-widget">
+                            <div class="doctor-img">
+                                <a class="avatar" href="profile.html"><img alt="" src="assets/img/user.jpg"></a>
+                            </div>
+                            <div class="dropdown profile-action">
+                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" id="editsect"><i class="fa fa-pencil m-r-5"></i> Editar</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_doctor"><i class="fa fa-trash-o m-r-5"></i> Eliminar</a>
+                                </div>
+                            </div>
+                            <h4 class="doctor-name text-ellipsis"><a href="profile.html">Cristina Groves</a></h4>
+                            <div class="doc-prof">Edmilson Soares</div>
+                            <div class="user-country">
+                                <i class="fa fa-map-marker"></i> Lisboa, Portugal
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="see-all">
+                            <a class="see-all-btn" href="javascript:void(0);">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----   convertidos------->
+        <div id="convert"  class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Convertidos</h4>
+                    </div>
+                    <div class="col-sm-6 col-6 text-right m-b-20">
+                        <a id="addcovt" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Adicionar</a>
+                    </div>
+                </div>
+                <div class="row doctor-grid">
+                    <div class="col-md-4 col-sm-4  col-lg-3">
+                        <div class="profile-widget">
+                            <div class="doctor-img">
+                                <a class="avatar" href="profile.html"><img alt="" src="assets/img/user.jpg"></a>
+                            </div>
+                            <div class="dropdown profile-action">
+                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" id="editcovt"><i class="fa fa-pencil m-r-5"></i> Editar</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_doctor"><i class="fa fa-trash-o m-r-5"></i> Eliminar</a>
+                                </div>
+                            </div>
+                            <h4 class="doctor-name text-ellipsis"><a href="profile.html">Cristina Groves</a></h4>
+                            <div class="doc-prof">Edmilson Soares</div>
+                            <div class="user-country">
+                                <i class="fa fa-map-marker"></i> Lisboa, Portugal
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="see-all">
+                            <a class="see-all-btn" href="javascript:void(0);">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----   Reuniao------->
+        <div id="reu" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Reunião</h4>
+                    </div>
+                    <div class="col-sm-8 col-9 text-right m-b-20">
+                        <a id="addre" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i>Adicionar Reunião</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID da Reunião</th>
+                                        <th>Remitente</th>
+                                        <th>Distinatário</th>
+                                        <th>Assunto</th>
+                                        <th>Data da Reunião</th>
+                                        <th>Hora da Reunião</th>
+                                        <th>Estado</th>
+                                        <th class="text-right">Acção</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>R0001</td>
+                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Departamento</td>
+                                        <td>Geral</td>
+                                        <td>semana de evangelização</td>
+                                        <td>30 Dec 2018</td>
+                                        <td>10:00am - 11:00am</td>
+                                        <td><span class="custom-badge status-red">Inactive</span></td>
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" id="editre"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>R0002</td>
+                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt="">Departamento</td>
+                                        <td>Geral</td>
+                                        <td>semana de evangelização</td>
+                                        <td>30 Dec 2018</td>
+                                        <td>10:00am - 11:00am</td>
+                                        <td><span class="custom-badge status-green">Active</span></td>
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="edit-reuniao.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="delete_appointment" class="modal fade delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <img src="assets/img/sent.png" alt="" width="50" height="46">
+                            <h3>Are you sure want to delete this Appointment?</h3>
+                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ntf" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Notificações</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="activity">
+                            <div class="activity-box">
+                                <ul class="activity-list">
+                                    <li>
+                                        <div class="activity-user">
+                                            <a href="profile.html" title="Lesley Grauer" data-toggle="tooltip" class="avatar">
+                                                <img alt="Lesley Grauer" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                            </a>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="timeline-content">
+                                                <a href="profile.html" class="name">Edmilson</a>nova tarefas<a href="#">Desenvolvimento</a>
+                                                <span class="time">4 mins ago</span>
+                                            </div>
+                                        </div>
+										<a class="activity-delete" href="#" title="Delete">&times;</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="perfil" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-7 col-6">
+                        <h4 class="page-title">Perfil</h4>
+                    </div>
+
+                    <div class="col-sm-5 col-6 text-right m-b-30">
+                        <a href="edit-membros.html" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i>Editar</a>
+                    </div>
+                </div>
+                <div class="card-box profile-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="profile-view">
+                                <div class="profile-img-wrap">
+                                    <div class="profile-img">
+                                        <a href="#"><img class="avatar" src="assets/img/user.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0">Edmilson Soares</h3>
+                                                <small class="text-muted">Evangelista</small>
+                                                <div class="staff-id">ID : DR-0001</div>
+                                                <div class="staff-msg"><a href="#" class="btn btn-primary">Enviar SMS</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <ul class="personal-info">
+                                                <li>
+                                                    <span class="title">Contacto:</span>
+                                                    <span class="text"><a href="#">770-889-6484</a></span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Email:</span>
+                                                    <span class="text"><a href="#">edmilson@gmail.com</a></span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Data de Nascimento:</span>
+                                                    <span class="text">22-2-1998</span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Morada:</span>
+                                                    <span class="text">Lisboa, Protugal</span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Genero:</span>
+                                                    <span class="text">Masculino</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+				<div class="profile-tabs">
+					<ul class="nav nav-tabs nav-tabs-bottom">
+						<li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">Sobre</a></li>
+						<li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Perfil</a></li>
+						<li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Mensagem</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane show active" id="about-cont">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-box">
+                            <h3 class="card-title">Informações Religosa</h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Função no Departamento</a>
+                                                <div>Evangelista</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Função na Igreja</a>
+                                                <div>Evanelista</div>
+                                              <!--  <span class="time">1997 - 2001</span> --->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-box mb-0">
+                            <h3 class="card-title"></h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Bíblia e Hinário</a>
+                                                <span class="time">Ambos</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Batizado</a>
+                                                <span class="time">sim</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Estado</a>
+                                                <span class="time">Activo</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						</div>
+						<div class="tab-pane" id="bottom-tab2">
+							Tab content 2
+						</div>
+						<div class="tab-pane" id="bottom-tab3">
+							Tab content 3
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+
+        <!-----   ADD------->
+        <div id="addpublic" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Adicionar Publicação</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text" id="pa_nome">
+                            </div>                        
+                            <div class="form-group"  >
+                                <label>Categoria</label>
+                                <select class="select" id="pa_cat">
+                                    <option>Proximo evento</option>
+                                    <option>Evento</option>
+                                    <option>Seminário</option>
+                                    <option>Blog</option>
+                                </select>
+                             </div>
+                            <div class="form-group">
+                                <label>vídeo</label>
+                                <div>
+                                    <input class="form-control" type="file" id="pa_video">
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label>Images</label>
+                                <div>
+                                    <input class="form-control" type="file" accept=".jpg, .jpeg, .png" id="pa_img">
+                                    <small class="form-text text-muted"></small>
+                                </div>
+                                <!--<div class="row">
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/blog/blog-thumb-01.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                                <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="pa_data">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"  >
+                                        <label>Hora</label>
+                                        <div class="time-icon">
+                                            <input type="text" class="form-control datetimepicker3" id="pa_hora">
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <textarea cols="30" rows="6" class="form-control" id="pa_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+                                                <select class="form-control select" id="pa_e">
+                                                    <option>Sim</option>
+                                                    <option>Não</option>
+                                                </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_p_a">Publicar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addencomenda" class="page-wrapper" style="display: block;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Solicitar Encomenda</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Nome da loja <span class="text-danger">*</span></label>
+                                    <div class="form-group" style="display: flex;">
+                                        <input class="form-control" type="text" id="ma_nomef">
+                                        <button class="btn btn-danger" id="btn_m_a"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <button class="btn btn-primary" id="btn_m_a">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Link do produto da loja <span class="text-danger">*</span></label>
+                                    <div class="form-group" style="display: flex;">
+                                        <input class="form-control" type="text" id="ma_nomef">
+                                        <button class="btn btn-danger" id="btn_m_a">remover</button>
+                                        <button class="btn btn-primary" id="btn_m_a"  onclick="produto()">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_m_a">Solicitar a Encomenta</button>
+                            </div>
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addsector" class="page-wrapper" style="display: none">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Adicionar sector</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome do Responsável<span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="se_nomef">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Sobre nome do Responsável</label>
+                                        <input class="form-control" type="text" id="se_nomeF">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                                <label>Nome do Sector</label>
+                                                <input class="form-control" type="text" id="se_nome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Função do sector</label>
+                                                <select class="form-control select" id="se_fun">
+                                                    <option>Evangelização</option>
+                                                    <option>Discipulado</option>
+                                                    <option>Louvores</option>
+                                                </select>
+                                        </div>
+                                    <!--
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div> -->
+                                </div>
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-group">
+												<label>Localização</label>
+												<input type="text" class="form-control " id="se_local">
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>País</label>
+												<select class="form-control select" id="se_pais">
+													<option>São Tomé e Príncipe</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Cidade</label>
+												<select class="form-control select" id="se_cidade">
+                                                    <option>São Tomé</option>
+                                                    <option>Santana</option>
+                                                    <option>São João dos Angolares</option>
+                                                    <option>Neves</option>
+                                                    <option>Guadalupe</option>
+                                                    <option>Trindade</option>
+                                                    <option>Santo António</option>
+                                                </select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Distrito</label>
+												<select class="form-control select" id="se_dis">
+													<option>Água Grande</option>
+													<option>Cantagalo</option>
+													<option>Caué</option>
+                                                    <option>Lembá</option>
+                                                    <option>Lobata</option>
+                                                    <option>Mé-Zóchi</option>
+                                                    <option>Pagué</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Código Postal</label>
+												<input type="text" class="form-control" id="se_cp">
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Telemóvel </label>
+                                        <input class="form-control" type="text" id="se_cont">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<label>Foto</label>
+										<div class="profile-upload">
+											<div class="upload-img">
+												<img alt="" src="assets/img/user.jpg">
+											</div>
+											<div class="upload-input">
+												<input type="file" class="form-control" id="se_img">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label>Curta Descrição do sector</label>
+                                <textarea class="form-control" rows="3" cols="30" id="se_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+		                           <select class="form-control select" id="se_E">
+                                        <option>Activo</option>
+                                        <option>Inactivo</option>
+                                    </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_s_e">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addconvert" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Adicionar Convertido</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="ce_nomef">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Sobre nome</label>
+                                        <input class="form-control" type="text" id="ce_nomeF">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                                <label>Função no Departamento</label>
+                                                <select class="form-control select" id="ce_fdem">
+                                                    <option>Responsável</option>
+                                                    <option>Vice-Responsável</option>
+                                                    <option>Texorreiro</option>
+                                                    <option>Evagelista</option>
+                                                    <option>Nenhuma</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Função na igreja</label>
+                                                <select class="form-control select" id="ce_fig">
+                                                    <option>Pastor</option>
+                                                    <option>Presbitero</option>
+                                                    <option>Diacuno</option>
+                                                    <option>Diacuniza</option>
+                                                    <option>Obreiro</option>
+                                                    <option>Crente</option>
+                                                </select>
+                                        </div>
+                                    <!--
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div> -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Bíblia e Hinário</label>
+                                                <select class="form-control select" id="ce_BH">
+                                                    <option>Tenho Bíblia</option>
+                                                    <option>Tenho Hinário</option>
+                                                    <option>Tenho ambos</option>
+                                                </select>
+                                        </div>
+                                    <!--<div class="form-group">
+                                        <label>Periodo de trabalho</label>
+                                       <!--<input class="form-control" type="password">
+                                    </div>-->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group gender-select">
+                                        <label class="gen-label">Batizado:</label>
+                                        <div class="form-check-inline">
+                                                <select class="form-control select" id="ce_B">
+                                                    <option>Sim</option>
+                                                    <option>Não</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Data de nascimento</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="ce_data">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group gender-select">
+										<label class="gen-label">Genero:</label>
+	                                            <select class="form-control select" id="ce_G">
+                                                    <option>Masculino</option>
+                                                    <option>Feminino</option>
+                                                </select>
+									</div>
+                                </div>
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label>Morada</label>
+												<input type="text" class="form-control " id="ce_morada">
+											</div>
+										</div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Data de conversão</label>
+                                                <div class="cal-icon">
+                                                    <input type="text" class="form-control datetimepicker" id="ce_datac">
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Local ou Eventos</label>
+                                                <select class="form-control select" id="ce_local">
+                                                    <option>Semana de Evengelização</option>
+                                                    <option>Culto de domingo</option>
+                                                    <option>Visita en Hospital</option>
+                                                    <option>Evengelização no terrento</option>
+                                                </select>
+                                            </div>
+                                        </div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>País</label>
+												<select class="form-control select" id="ce_pais">
+													<option>São Tomé e Príncipe</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Cidade</label>
+												<select class="form-control select" id="ce_cidade">
+                                                    <option>São Tomé</option>
+                                                    <option>Santana</option>
+                                                    <option>São João dos Angolares</option>
+                                                    <option>Neves</option>
+                                                    <option>Guadalupe</option>
+                                                    <option>Trindade</option>
+                                                    <option>Santo António</option>
+                                                </select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Distrito</label>
+												<select class="form-control select" id="ce_dis">
+													<option>Água Grande</option>
+													<option>Cantagalo</option>
+													<option>Caué</option>
+                                                    <option>Lembá</option>
+                                                    <option>Lobata</option>
+                                                    <option>Mé-Zóchi</option>
+                                                    <option>Pagué</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Código Postal</label>
+												<input type="text" class="form-control" id="ce_cp">
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Telemóvel </label>
+                                        <input class="form-control" type="text" id="ce_cont">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<label>Foto</label>
+										<div class="profile-upload">
+											<div class="upload-img">
+												<img alt="" src="assets/img/user.jpg">
+											</div>
+											<div class="upload-input">
+												<input type="file" class="form-control" id="ce_foto">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label>Curta biográfia do Membro</label>
+                                <textarea class="form-control" rows="3" cols="30" id="ce_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+                                               <select class="form-control select" id="ce_E">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
+                                                </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_convert_e">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addreu" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Adicionar Reunião</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+									<div class="form-group">
+										<label>Remitente</label>
+										<input class="form-control" type="text" value="Direitor" id="ra_r">
+									</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Distinatário</label>
+                                        <select class="select" id="ra_d" >
+                                            <option>Geral</option>
+                                            <option>Estrutura</option>
+                                            <option>Membro</option>
+                                            <option>Sectores</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="form-group" >
+                                        <label>Data</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="ra_data">
+                                        </div>
+                                    </div>
+                            </div>
+                           </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"  >
+                                        <label>Hora do Inicio</label>
+                                        <div class="time-icon">
+                                            <input type="text" class="form-control datetimepicker3" id="ra_hi">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" >
+                                        <label>Hora do Fim</label>
+                                        <div class="time-icon">
+                                            <input type="text" class="form-control datetimepicker3" id="ra_hf">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Assunto da Reunião</label>
+                                        <input class="form-control" type="text"  id="ra_a">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensagem</label>
+                                <textarea cols="30" rows="4" class="form-control" id="ra_m"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado da Reunião</label>
+                                        <label>Distinatário</label>
+                                        <select class="select" id="ra_e" >
+                                            <option>Activo</option>
+                                            <option>Inactivo</option>
+                                        </select>>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_r_a">Públicar Reuniaão</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-----   EDIT------->
+        <div id="editpublic" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Editar Publicação</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>vídeo</label>
+                                <div>
+                                    <input class="form-control" type="file">
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label>Images</label>
+                                <div>
+                                    <input class="form-control" type="file">
+                                    <small class="form-text text-muted">Max. file size: 50 MB. Allowed images: jpg, gif, png. Maximum 10 images only.</small>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/blog/blog-thumb-01.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                                <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-4 col-lg-3 col-xl-2">
+                                        <div class="product-thumbnail">
+                                            <img src="assets/img/placeholder-thumb.jpg" class="img-thumbnail img-fluid" alt="">
+                                            <span class="product-remove" title="remove"><i class="fa fa-close"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Categoria</label>
+                                        <select class="select">
+                                            <option>Proximo evento</option>
+                                            <option>Evento</option>
+                                            <option>Seminário</option>
+                                            <option>Blog</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data de nascimento</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <textarea cols="30" rows="6" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="blog_active" value="option1" checked>
+                                    <label class="form-check-label" for="blog_active">
+                                    Active
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="blog_inactive" value="option2">
+                                    <label class="form-check-label" for="blog_inactive">
+                                    Inactive
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editmembro" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Editar Membros</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                            <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>id<span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="me_id">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="me_nomef">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Sobre nome</label>
+                                        <input class="form-control" type="text" id="me_nomeF">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                                <label>Função no Departamento</label>
+                                                <select class="form-control select" id="me_fdem">
+                                                    <option>Responsável</option>
+                                                    <option>Vice-Responsável</option>
+                                                    <option>Texorreiro</option>
+                                                    <option>Evagelista</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Função na igreja</label>
+                                                <select class="form-control select" id="me_fig">
+                                                    <option>Pastor</option>
+                                                    <option>Presbitero</option>
+                                                    <option>Diacuno</option>
+                                                    <option>Diacuniza</option>
+                                                    <option>Obreiro</option>
+                                                    <option>Crente</option>
+                                                </select>
+                                        </div>
+                                    <!--
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div> -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Bíblia e Hinário</label>
+                                                <select class="form-control select" id="me_BH">
+                                                    <option>Tenho Bíblia</option>
+                                                    <option>Tenho Hinário</option>
+                                                    <option>Tenho ambos</option>
+                                                </select>
+                                        </div>
+                                    <!--<div class="form-group">
+                                        <label>Periodo de trabalho</label>
+                                       <!--<input class="form-control" type="password">
+                                    </div>-->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group gender-select">
+                                        <label class="gen-label">Batizado:</label>
+                                        <div class="form-check-inline">
+                                                <select class="form-control select" id="me_B">
+                                                    <option>Sim</option>
+                                                    <option>Não</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Data de nascimento</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="me_data">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group gender-select">
+                                        <label class="gen-label">Genero:</label>
+                                                <select class="form-control select" id="me_G">
+                                                    <option>Masculino</option>
+                                                    <option>Feminino</option>
+                                                </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>Morada</label>
+                                                <input type="text" class="form-control " id="me_morada">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label>País</label>
+                                                <select class="form-control select" id="me_pais">
+                                                    <option>São Tomé e Príncipe</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label>Cidade</label>
+                                                <select class="form-control select" id="me_cidade">
+                                                    <option>São Tomé</option>
+                                                    <option>Santana</option>
+                                                    <option>São João dos Angolares</option>
+                                                    <option>Neves</option>
+                                                    <option>Guadalupe</option>
+                                                    <option>Trindade</option>
+                                                    <option>Santo António</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label>Distrito</label>
+                                                <select class="form-control select" id="me_dis">
+                                                    <option>Água Grande</option>
+                                                    <option>Cantagalo</option>
+                                                    <option>Caué</option>
+                                                    <option>Lembá</option>
+                                                    <option>Lobata</option>
+                                                    <option>Mé-Zóchi</option>
+                                                    <option>Pagué</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label>Código Postal</label>
+                                                <input type="text" class="form-control" id="me_cp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Telemóvel </label>
+                                        <input class="form-control" type="text" id="me_cont">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Foto</label>
+                                        <div class="profile-upload">
+                                            <div class="upload-img">
+                                                <img id="memimge_e" alt="" src="assets/img/user.jpg">
+                                            </div>
+                                            <div class="upload-input">
+                                                <input type="file"  accept=".jpg, .jpeg, .png" class="form-control" id="me_foto"  onchange="handleFiles(this.files,2)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Curta biográfia do Membro</label>
+                                <textarea class="form-control" rows="3" cols="30" id="me_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+                                               <select class="form-control select" id="me_E">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
+                                                </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_m_e">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editsector" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome do Responsável<span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="se_nomef">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Sobre nome do Responsável</label>
+                                        <input class="form-control" type="text" id="se_nomeF">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                                <label>Nome do Sector</label>
+                                                <input class="form-control" type="text" id="se_nome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Função do sector</label>
+                                                <select class="form-control select" id="se_fun">
+                                                    <option>Evangelização</option>
+                                                    <option>Discipulado</option>
+                                                    <option>Louvores</option>
+                                                </select>
+                                        </div>
+                                    <!--
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div> -->
+                                </div>
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-group">
+												<label>Localização</label>
+												<input type="text" class="form-control " id="se_local">
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>País</label>
+												<select class="form-control select" id="se_pais">
+													<option>São Tomé e Príncipe</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Cidade</label>
+												<select class="form-control select" id="se_cidade">
+                                                    <option>São Tomé</option>
+                                                    <option>Santana</option>
+                                                    <option>São João dos Angolares</option>
+                                                    <option>Neves</option>
+                                                    <option>Guadalupe</option>
+                                                    <option>Trindade</option>
+                                                    <option>Santo António</option>
+                                                </select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Distrito</label>
+												<select class="form-control select" id="se_dis">
+													<option>Água Grande</option>
+													<option>Cantagalo</option>
+													<option>Caué</option>
+                                                    <option>Lembá</option>
+                                                    <option>Lobata</option>
+                                                    <option>Mé-Zóchi</option>
+                                                    <option>Pagué</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Código Postal</label>
+												<input type="text" class="form-control" id="se_cp">
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Telemóvel </label>
+                                        <input class="form-control" type="text" id="se_cont">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<label>Foto</label>
+										<div class="profile-upload">
+											<div class="upload-img">
+												<img alt="" src="assets/img/user.jpg">
+											</div>
+											<div class="upload-input">
+												<input type="file" class="form-control" id="se_img">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label>Curta Descrição do sector</label>
+                                <textarea class="form-control" rows="3" cols="30" id="se_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+		                           <select class="form-control select" id="se_E">
+                                        <option>Activo</option>
+                                        <option>Inactivo</option>
+                                    </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_s_a">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editconvert" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="ce_nomef">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Sobre nome</label>
+                                        <input class="form-control" type="text" id="ce_nomeF">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                                <label>Função no Departamento</label>
+                                                <select class="form-control select" id="ce_fdem">
+                                                    <option>Responsável</option>
+                                                    <option>Vice-Responsável</option>
+                                                    <option>Texorreiro</option>
+                                                    <option>Evagelista</option>
+                                                    <option>Nenhuma</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Função na igreja</label>
+                                                <select class="form-control select" id="ce_fig">
+                                                    <option>Pastor</option>
+                                                    <option>Presbitero</option>
+                                                    <option>Diacuno</option>
+                                                    <option>Diacuniza</option>
+                                                    <option>Obreiro</option>
+                                                    <option>Crente</option>
+                                                </select>
+                                        </div>
+                                    <!--
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div> -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                                <label>Bíblia e Hinário</label>
+                                                <select class="form-control select" id="ce_BH">
+                                                    <option>Tenho Bíblia</option>
+                                                    <option>Tenho Hinário</option>
+                                                    <option>Tenho ambos</option>
+                                                </select>
+                                        </div>
+                                    <!--<div class="form-group">
+                                        <label>Periodo de trabalho</label>
+                                       <!--<input class="form-control" type="password">
+                                    </div>-->
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group gender-select">
+                                        <label class="gen-label">Batizado:</label>
+                                        <div class="form-check-inline">
+                                                <select class="form-control select" id="ce_B">
+                                                    <option>Sim</option>
+                                                    <option>Não</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Data de nascimento</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="ce_data">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group gender-select">
+										<label class="gen-label">Genero:</label>
+	                                            <select class="form-control select" id="ce_G">
+                                                    <option>Masculino</option>
+                                                    <option>Feminino</option>
+                                                </select>
+									</div>
+                                </div>
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label>Morada</label>
+												<input type="text" class="form-control " id="ce_morada">
+											</div>
+										</div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Data de conversão</label>
+                                                <div class="cal-icon">
+                                                    <input type="text" class="form-control datetimepicker" id="ce_datac">
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Local ou Eventos</label>
+                                                <select class="form-control select" id="ce_local">
+                                                    <option>Semana de Evengelização</option>
+                                                    <option>Culto de domingo</option>
+                                                    <option>Visita en Hospital</option>
+                                                    <option>Evengelização no terrento</option>
+                                                </select>
+                                            </div>
+                                        </div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>País</label>
+												<select class="form-control select" id="ce_pais">
+													<option>São Tomé e Príncipe</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Cidade</label>
+												<select class="form-control select" id="ce_cidade">
+                                                    <option>São Tomé</option>
+                                                    <option>Santana</option>
+                                                    <option>São João dos Angolares</option>
+                                                    <option>Neves</option>
+                                                    <option>Guadalupe</option>
+                                                    <option>Trindade</option>
+                                                    <option>Santo António</option>
+                                                </select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Distrito</label>
+												<select class="form-control select" id="ce_dis">
+													<option>Água Grande</option>
+													<option>Cantagalo</option>
+													<option>Caué</option>
+                                                    <option>Lembá</option>
+                                                    <option>Lobata</option>
+                                                    <option>Mé-Zóchi</option>
+                                                    <option>Pagué</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Código Postal</label>
+												<input type="text" class="form-control" id="ce_cp">
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Telemóvel </label>
+                                        <input class="form-control" type="text" id="ce_cont">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<label>Foto</label>
+										<div class="profile-upload">
+											<div class="upload-img">
+												<img alt="" src="assets/img/user.jpg">
+											</div>
+											<div class="upload-input">
+												<input type="file" class="form-control" id="ce_foto">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label>Curta biográfia do Membro</label>
+                                <textarea class="form-control" rows="3" cols="30" id="ce_desc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado</label>
+                                               <select class="form-control select" id="ce_E">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
+                                                </select>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_convert_a">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editreu" class="page-wrapper" style="display: none;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Editar Reunião</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+									<div class="form-group">
+										<label>Remitente</label>
+										<input class="form-control" type="text" value="Direitor" id="re_r">
+									</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Distinatário</label>
+                                        <select class="select" id="re_d" >
+                                            <option>Geral</option>
+                                            <option>Estrutura</option>
+                                            <option>Membro</option>
+                                            <option>Sectores</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="form-group" >
+                                        <label>Data</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" id="re_data">
+                                        </div>
+                                    </div>
+                            </div>
+                           </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"  >
+                                        <label>Hora do Inicio</label>
+                                        <div class="time-icon">
+                                            <input type="text" class="form-control datetimepicker3" id="re_hi">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" >
+                                        <label>Hora do Fim</label>
+                                        <div class="time-icon">
+                                            <input type="text" class="form-control datetimepicker3" id="re_hf">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Assunto da Reunião</label>
+                                        <input class="form-control" type="text"  id="re_a">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensagem</label>
+                                <textarea cols="30" rows="4" class="form-control" id="re_m"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Estado da Reunião</label>
+                                        <label>Distinatário</label>
+                                        <select class="select" id="re_e" >
+                                            <option>Activo</option>
+                                            <option>Inactivo</option>
+                                        </select>>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn" id="btn_r_e">Públicar Reuniaão</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+      
+
+
+
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+  </div>
+        
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/tagsinput.js"></script>
+    <script src="assets/js/Chart.bundle.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/app.js"></script>
+   <!-- <script src="../preloard.js"></script>-->
+   <script src="assets/js/dem_dado.js"></script>
+    <script src="assets/js/dem.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    	<script>
+            $(function () {
+                $('.datetimepicker3').datetimepicker({
+                    format: 'LT'
+
+                });
+            });
+
+   function gravar(id) {
+     localStorage.id = id;
+     //alert(localStorage.id);
+   }
+
+   function handleFiles(files,d) {
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var imageType = /image.*/;
+    
+    if (!file.type.match(imageType)) {
+      continue;
+    }
+    var img;
+    if(d==1){
+     img = document.getElementById("memimg");
+    } else if(d==2){
+     img = document.getElementById("memimg_e");
+    }
+
+    img.file = file; 
+    var reader = new FileReader();
+    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+  }
+}
+
+ var person
+function ca() {
+	person = prompt("Informe o banco de dados","");
+}
+
+
+
+function produto() {
+ /*           fetch('https://pt.aliexpress.com/item/32996024900.html?spm=a2g0o.tm161068.5298541720.2.5abc7nMo7nMo6g&gps-id=seaZeus&scm=1007.25281.191399.0&scm_id=1007.25281.191399.0&scm-url=1007.25281.191399.0&pvid=08bba374-f2ac-4a42-a853-b81e68ace744')
+            .then(function(response) {
+                if(response.ok) {
+                 console.log(response.json())
+                   
+                } else {
+                    console.log('Network response was not ok.');
+                }
+                })
+        .catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ' + error.message);
+        });
+
+*/
+        fetch("https://campaign.aliexpress.com/wow/gf/upr-daily?spm=a2g0o.best.weekly-deals.3.23a122aei9apai&wh_pid=weekly&wh_weex=true&preDownLoad=true&preInitInstance=rax&productIds=33007043734", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "SIGN-UP-FOR-KEY",
+		"x-rapidapi-host": "ali-express1.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+}
+
+
+     </script>
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>+Proxímo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+	<link rel="shortcut icon" href="images/logo.jpeg">
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo.jpeg">
+    <link rel="apple-touch-icon-precomposed" href="images/logo.jpeg">
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="/inicio"><img src="images/logo.jpeg" alt="" width="50" height="30"/></a>
+						</div>
+					</div>
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right" >
+							<ul class="nav navbar-nav">
+								<li><a href="/service"> <i class="fa fa-star"></i>Serviço de entrega</a></li>
+								<li><a href="/check"><i class="fa fa-crosshairs"></i>Verificação</a></li>
+								<li><a href="/comprar"><i class="fa fa-shopping-cart"></i> Compras</a></li>
+								<li><a href=""><i class="fa fa-user"></i> <%= user.username %></a></li>
+								<li><a href="/auth/logout"><i class="fa fa-lock" style="margin-left: 10px;"></i>Sair</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li class="dropdown"><a href="#">Shoping<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+										<li><a href="/check">Verificação</a></li> 
+										<li><a href="https://www.aliexpress.com/">Aliexpress.com</a></li> 
+										<li><a href="/comprar">Compras</a></li> 
+										<li><a href="/service">Serviço de Entrega</a></li> 
+										<li><a href="/auth/logout">Sair</a></li> 
+                                    </ul>
+                                </li> 
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="procure o seu produto"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#">+Proxímo</a></li>
+				  <li class="active">Verifição</li>
+				</ol>
+			</div><!--/breadcrums-->
+			<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-8 clearfix">
+						<div class="bill-to">
+							<p>Sua Informações ou da pessoa que ir+a receber a encomenda</p>
+							<div class="form-one">
+								<form>
+									<input type="text" placeholder="Email">
+									<input type="text" placeholder="Primeiro nome*">
+									<input type="text" placeholder="Apelido">
+									<input type="text" placeholder="endereço 2 *">
+									<input type="text" placeholder="endereço 2">
+								</form>
+							</div>
+							<div class="form-two">
+								<form>
+									<input type="text" placeholder="Código Postal">
+									<select>
+										<option>-- País --</option>
+										<option>São Tomé e Prinncipe</option>
+										<option>Portugal/option>
+									</select>
+									<select>
+										<option>-- Distrito/Cidade --</option>
+										<option>United States</option>
+										<option>Bangladesh</option>
+										<option>UK</option>
+										<option>India</option>
+										<option>Pakistan</option>
+										<option>Ucrane</option>
+										<option>Canada</option>
+										<option>Dubai</option>
+									</select>
+									<input type="text" placeholder="Telemóvel *">
+									<input type="text" placeholder="Telemóvel 2">
+									<input type="text" placeholder="Fax">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="order-message">
+							<p>Observações</p>
+							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+							<label><input type="checkbox">Bem vindo a nossa loja</label>
+						</div>	
+					</div>					
+				</div>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	
+
+
+
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>+Proxímo</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/price-range.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+	<link rel="shortcut icon" href="images/logo.jpeg">
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo.jpeg">
+    <link rel="apple-touch-icon-precomposed" href="images/logo.jpeg">
+</head><!--/head-->
+
+<body >
+	<div id="app">
+	<header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="/inicio"><img src="images/logo.jpeg" alt="" width="50" height="30"/></a>
+						</div>
+					</div>
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right" >
+							<ul class="nav navbar-nav">
+								<li><a href="/service"> <i class="fa fa-star"></i>Serviço de entrega (0)</a></li>
+								<li><a href="/check"><i class="fa fa-crosshairs"></i>Verificação</a></li>
+								<li><a href="/comprar"><i class="fa fa-shopping-cart"></i> Compras</a></li>
+								<li><a href=""><i class="fa fa-user"></i> <%= user.username %></a></li>
+								<li><a href="/auth/logout"><i class="fa fa-lock" style="margin-left: 10px;"></i>Sair</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> 
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li class="dropdown"><a href="#">Shoping<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+										<li><a href="/check">Verificação</a></li> 
+										<li><a href="https://www.aliexpress.com/">Aliexpress.com</a></li> 
+										<li><a href="/comprar">Compras</a></li> 
+										<li><a href="/service">Serviço de Entrega</a></li> 
+										<li><a href="/auth/logout">Sair</a></li> 
+                                    </ul>
+                                </li> 
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="procure o seu produto"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#">+Proxímo</a></li>
+				  <li class="active">Serviço de Entrega</li>
+				</ol>
+			</div><!--/breadcrums-->
+			<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-8 clearfix">
+						<div class="bill-to">
+							<p>Informações pessoal e da pessoa que irá receber</p>
+							<div class="form-one">
+								<form>
+									<input v-model="nomer" type="text" placeholder="Seu Email">
+									<input type="text" placeholder="Primeiro nome">
+									<input type="text" placeholder="Útimo nome">
+									<input type="text" placeholder="1º endereço">
+									<input type="text" placeholder="2º endereço (opção)">
+									<input type="text" placeholder="Código Postal">
+									<select style="margin-bottom: 10px;">
+										<option>-- País --</option>
+										<option>São Tomé e Príncipe</option>
+										<option>Portugal</option>
+									</select>
+									<select  style="margin-bottom: 10px;"> 
+										<option>-- State / Province / Region --</option>
+
+									</select>
+									<input type="text" placeholder="1 - Telemóvel">
+									<input type="text" placeholder="2 - Telemóvel">
+								</form>
+							</div>
+							<div class="form-two">
+								<form>
+									<input type="text" placeholder="Email do remitente">
+									<input type="text" placeholder="Primeiro nome do remitente">
+									<input type="text" placeholder="Útimo nome do remitente">
+									<input type="text" placeholder="1º endereço do remitente">
+									<input type="text" placeholder="2º endereço do remitente (opção)">
+									<input type="text" placeholder="Código Postal do remitente">
+									<select>
+										<option>-- País --</option>
+										<option>São Tomé e Príncipe</option>
+										<option>Portugal</option>
+									</select>
+									<select>
+										<option>-- State / Province / Region --</option>
+
+									</select>
+									<input type="text" placeholder="1 - Telemóvel do remitente">
+									<input type="text" placeholder="2 - Telemóvel do remitente">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<p>Informações da Encomenda</p>
+						<div class="form-one">
+							<form>
+								<input type="text" placeholder="Nome da loja">
+								<input type="text" placeholder="Identificação da encomenda">
+							</form>
+							<a class="btn btn-primary" v-on:click="add_encomenda">Adicionar encomenda</a>
+						</div>	
+					</div>					
+				</div>
+			</div>
+			
+			<div class="review-payment">
+				<h2>Review & Payment</h2>
+			</div>
+
+			<div class="payment-options">
+					<span>
+						<label><input type="checkbox"> Direct Bank Transfer</label>
+					</span>
+					<span>
+						<label><input type="checkbox"> Check Payment</label>
+					</span>
+					<span>
+						<label><input type="checkbox"> Paypal</label>
+					</span>
+				</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	
+
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>+</span>Proxímo</h2>
+							<p>Ajudamos as pessoas a pouparem tempo de dinheiro, facilitar o comércio
+								entre STP e mundo, vamos oferecer vários serviços, como envios de qualquer objeto para
+								aqueles que estão na diáspora e desejam enviar qualquer coisas para STP e um serviço
+								especial para aqueles que desejam comprar ou importar fora de STP</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>Estamos em São Tomé e Príncipe e no Portugal</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Serviço</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Entrega de encomenda</a></li>
+								<li><a href="#">Assistência ao cliente</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>link rápido</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">T-Shirt</a></li>
+								<li><a href="#">Homems</a></li>
+								<li><a href="#">Mulheres</a></li>
+								<li><a href="#">Saúde</a></li>
+								<li><a href="#">Tecnologia</a></li>
+								<li><a href="#">Crianças</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Política da loja</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Termo de uso</a></li>
+								<li><a href="#">política de privacidade</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Sobre a loja</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">objectivos</a></li>
+								<li><a href="#">localização</a></li>
+								<li><a href="#">Contacto</a></li>
+					
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>Mantenha conectado conosco</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="seu email" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Serás notificados das todas novidades <br /> do mais proxímo</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2021 +Proxímo Inc. All rights reserved.</p>
+					<p class="pull-right">Projectado por <span><a target="_blank" href="#">Edmilson Soares</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+</div>
+
+    <script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.scrollUp.min.js"></script>
+    <script src="../js/jquery.prettyPhoto.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="../js/servico.js"></script>
+
+	<script>
+		var app5 = new Vue({
+			el: '#app',
+			data: {
+				emailr: '',
+				nomer:"Edmilson",
+				nome1r:"",
+				enderecor:"",
+				enderecor1:"",
+				codigpostalr:"",
+				paisr:"",
+				cidader:"",
+				telemovelr:"",
+				telemovel1r:"",
+				emaild: '',
+				nomed:"",
+				nome1d:"",
+				enderecod:"",
+				enderecod1:"",
+				codigpostald:"",
+				paisd:"",
+				cidaded:"",
+				telemoveld:"",
+				telemovel1d:"",
+				encomenda:[
+					{
+						nome:"",
+						idproduto:""
+					}
+				]
+
+
+			},
+			methods: {
+				add_encomenda: function () {
+				//this.encomenda
+				fetch("http://localhost:3000/service", {
+					method: "post",
+					body: JSON.stringify({
+						nome:"Edmilson",
+					})
+					});
+
+					
+				},
+				add_produto: function () {
+				//this.encomenda
+				}
+
+
+			}
+			})
+	</script>
+
+</body>
+</html>

@@ -94,3 +94,9 @@ router.get('/:id', (req, res, next) => {
 module.exports = router
 
 ```
+
+
+https://github.com/rocketseat-content/serie-api-rest-node
+https://strapi.io/documentation/developer-docs/latest/concepts/controllers.html#concept
+
+https://strapi.gitee.io/documentation/3.0.0-alpha.x/guides/email.html#usage
